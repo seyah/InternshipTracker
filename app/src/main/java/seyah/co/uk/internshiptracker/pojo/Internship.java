@@ -6,12 +6,10 @@ public class Internship implements Serializable {
 
     private int id;
     private String name;
-    private ApplicationStatus status;
 
-    public Internship(int id, String name, ApplicationStatus status) {
+    public Internship(int id, String name) {
         this.id = id;
         this.name = name;
-        this.status = status;
     }
 
     public int getId() {
@@ -28,13 +26,5 @@ public class Internship implements Serializable {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public ApplicationStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(ApplicationStatus status) {
-        this.status = status;
     }
 }

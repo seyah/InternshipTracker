@@ -56,7 +56,6 @@ public class InternshipsActivity extends AppCompatActivity {
         addInternship.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.d(TAG, "test");
                 final EditText input = new EditText(view.getContext());
                 AlertDialog d = new AlertDialog.Builder(view.getContext())
                         .setTitle("Add internship log")
@@ -85,6 +84,12 @@ public class InternshipsActivity extends AppCompatActivity {
         updateUI();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+        updateUI();
+    }
+
     private void updateUI() {
         ArrayList<Internship> internshipList = new ArrayList<>();
         SQLiteDatabase db = mHelper.getReadableDatabase();
@@ -94,13 +99,9 @@ public class InternshipsActivity extends AppCompatActivity {
         while (cursor.moveToNext()) {
             int idIndex = cursor.getColumnIndex(InternshipContract.InternshipEntry._ID);
             int nameIndex = cursor.getColumnIndex(InternshipContract.InternshipEntry.COL_INTERNSHIP_NAME);
-            int progressIndex = cursor.getColumnIndex(InternshipContract.InternshipEntry.COL_PROGRESS);
-            Internship internship = new Internship(cursor.getInt(idIndex), cursor.getString(nameIndex), ApplicationStatus.valueOf(cursor.getString(progressIndex)));
+            Internship internship = new Internship(cursor.getInt(idIndex), cursor.getString(nameIndex));
             internshipList.add(internship);
         }
-
-        //mTaskListView.setAdapter(new InternshipRowAdapter(this, internshipList));
-
 
         if (mAdapter == null) {
             mAdapter = new InternshipRowAdapter(this, internshipList);

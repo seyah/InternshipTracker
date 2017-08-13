@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/text_margin">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="10dp" />
+
+    <TextView
+        android:id="@+id/editText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="Details"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <EditText
+        android:id="@+id/new_event_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Event Name"
+        android:maxLines="1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse" />
+
+    <Spinner
+        android:id="@+id/new_event_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:entries="@array/status"
+        android:spinnerMode="dialog" />
+
+    <EditText
+        android:id="@+id/new_event_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Description"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small.Inverse" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <TextView
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:text="When is it?"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium" />
+
+    <DatePicker
+        android:id="@+id/new_event_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner" />
+
+    <CheckBox
+        android:id="@+id/new_event_notify"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Notify?" />
+
+</LinearLayout>

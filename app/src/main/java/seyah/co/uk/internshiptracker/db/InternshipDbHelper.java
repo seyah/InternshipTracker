@@ -21,8 +21,10 @@ public class InternshipDbHelper extends SQLiteOpenHelper {
                 InternshipContract.InternshipEventEntry._ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 InternshipContract.InternshipEventEntry.COL_EVENT_NAME + " TEXT NOT NULL," +
                 InternshipContract.InternshipEventEntry.COL_INTERNSHIP_ID + " INTEGER NOT NULL," +
-                InternshipContract.InternshipEventEntry.COL_DESCRIPTION + "TEXT," +
-                InternshipContract.InternshipEventEntry.COL_DATE + "DATE," +
+                InternshipContract.InternshipEventEntry.COL_STATUS + " STRING NOT NULL," +
+                InternshipContract.InternshipEventEntry.COL_DESCRIPTION + " TEXT," +
+                InternshipContract.InternshipEventEntry.COL_DATE + " BIGINT," +
+                InternshipContract.InternshipEventEntry.COL_NOTIFY + "  BOOLEAN," +
                 "FOREIGN KEY(" + InternshipContract.InternshipEventEntry.COL_INTERNSHIP_ID +
                 ") REFERENCES " + InternshipContract.InternshipEntry.TABLE +
                 "(" + InternshipContract.InternshipEntry._ID + "));";

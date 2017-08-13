@@ -43,8 +43,7 @@ public class InternshipRowAdapter extends BaseAdapter {
             holder = new ViewHolder();
             holder.txtInternshipId = (TextView) convertView.findViewById(R.id.internship_row_id);
             holder.txtInternshipName = (TextView) convertView.findViewById(R.id.internship_row_name);
-            holder.txtInternshipProgress = (TextView) convertView.findViewById(R.id.internship_row_progress);
- 
+
             convertView.setTag(holder);
         } else {
             holder = (ViewHolder) convertView.getTag();
@@ -52,8 +51,7 @@ public class InternshipRowAdapter extends BaseAdapter {
  
         holder.txtInternshipId.setText(String.valueOf(internshipArrayList.get(position).getId()));
         holder.txtInternshipName.setText(internshipArrayList.get(position).getName());
-        holder.txtInternshipProgress.setText(String.valueOf(ApplicationStatus.statusAsPercentage(internshipArrayList.get(position).getStatus())) + "%");
- 
+
         return convertView;
     }
 
@@ -68,6 +66,5 @@ public class InternshipRowAdapter extends BaseAdapter {
     static class ViewHolder {
         TextView txtInternshipId;
         TextView txtInternshipName;
-        TextView txtInternshipProgress;
     }
 }
